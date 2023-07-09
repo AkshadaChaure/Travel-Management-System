@@ -1,0 +1,62 @@
+<!--<p>
+  home works!
+</p>-->
+<head>
+      <base href="/">
+ 
+  </head>
+<div class='panel panel-primary'>
+    <div class='panel-heading'>
+        <!--{{title}}-->
+        Customer List!
+    </div>
+
+<table class="table table-hover">
+  <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Description </th>
+                        <th>Charges</th>
+                         <th>Actions</th>
+                    </tr>
+                </thead>
+ <tbody>
+                    <tr *ngFor='let customer of customers'>
+                        <td >
+                            <!--<a [routerLink]="['/product', product.productId]">-->
+                            <!--{{customer.fn+" "+customer.ln}}-->
+                            <!--</a>-->
+                            {{customer.name}}
+                        </td>
+                        <td>
+                            <!--{{customer.opt}}-->
+                            <!--{{desctype}}-->
+                            {{customer.type}}
+                        </td>
+
+                        <td>
+                          <!--{{ customer.vn | lowercase }}-->
+                          {{customer.desc}}
+                          </td>
+                          <td>
+                              {{customer.total}}
+                          </td>
+                        <td>
+                              <!--<button type="button" class="btn btn-info" (click)="onView(customer)" >View</button>                          -->
+                              <a href="" (click)="onDelete(customer)">Delete  </a>
+                              |
+                              <a [routerLink]="['/edit',customer.name]" (click)="onEdit(customer)">Update  </a>
+                              |
+                              <a [routerLink]="['/view',customer.name]" (click)="onView(customer)">Details </a>
+                        </td>
+                        <!--<td><button type="button" class="btn btn-danger" (click)="onDelete(customer)" >Delete</button></td>-->
+                        
+
+                    </tr>
+                </tbody>
+
+</table>
+</div>
+
+<button type="button" class="btn btn-info" (click)="onAdd()">Add new request</button>

@@ -1,0 +1,91 @@
+<!--<p>
+  registration works!
+</p>
+
+<h1>
+  new registration
+</h1> -->
+
+<div  >
+   <h3>
+  <!--Add Customer-->
+  {{cust_title}}
+      </h3>
+<form (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" class="form-control"  id="name" required name='name' ng-disabled='actionFlag' [(ngModel)]='name' placeholder="Ishita">
+  </div>
+
+  <div class="form-group">
+    <label for="description">Description</label>
+    <input type="text" class="form-control" id="description"  required name='desc' placeholder="description" [(ngModel)]='desc'>
+  </div>
+
+  <div class="form-group">
+    <label for="age">Age</label>
+    <input type="number" class="form-control" id="age"  required  name='age'  [(ngModel)]='age'>
+  </div>
+
+  <div class="form-group">
+    <label for="mobno">Mobile number</label>
+    <input type="number" class="form-control" id="mobno"  required  name='mobno' placeholder="9999955555" [(ngModel)]='mobno'>
+  </div>
+
+
+<div class="radio"  class="form-group">
+  <label for="mobno">Type</label>
+  <!--<label>
+    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+   Corporate
+  </label>
+
+  <label>
+    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+    Regular 
+  </label>-->
+  <br>
+
+<input name="options" ng-control="options" type="radio" [value]="1"  [(ngModel)]="opt" > Corporate<br/>
+
+<input name="options" ng-control="options" type="radio" [value]="2" [(ngModel)]="opt" > Regular<br/>
+
+</div>
+
+  <div class="checkbox" class="form-group">
+    <label> 
+      Loyal program subscribed
+      <!--<input type="checkbox" ng-model="loyal" ng-true-value="'YES'" ng-false-value="'NO'">-->
+      <input type="checkbox" [checked]="loyal" (change)="loyal = !loyal"> 
+      <!--<input type="checkbox" value="loyal" [(ngModel)]='<loyal></loyal>' > -->
+    </label>
+  </div>
+
+
+<div class="form-group">
+    <label for="pickupdate"> Pickup Date</label>
+    <input type="date" class="form-control" id="pickupdate"  required   name='pd' [(ngModel)]='pd'>
+  </div>
+
+  <div class="form-group">
+    <label for="charge">Charges</label>
+    <input type="number" class="form-control" id="charge"  required  name='charge'  [(ngModel)]='charge'>
+  </div>
+
+
+  <div class="form-group">
+    <label for="noofemp">Number of employees</label>
+    <input type="number" class="form-control" id="noofemp"  required  name='noofemp'  [(ngModel)]='noofemp'>
+  </div>
+
+  <div class="form-group">
+    <label for="dist">Distance travelled</label>
+    <input type="number" class="form-control" id="dist"   name='dist' [(ngModel)]='dist'>
+  </div>
+
+  
+
+ <input type="submit" class="btn btn-default" value="Submit Request" />
+  <input type="reset"  class="btn btn-default" value="Reset">
+</form>
+</div>
